@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { play } from "../../utils"
-import Timer from "../../components/Timer"
-import { TIMER } from "../../constants"
 import {
     Card,
-    Grid,
-    TextField,
-    Button
+    Grid
 } from '@material-ui/core';
-import styles from './styles';
+import styles from '../../assets/styles';
+
+import { play } from "../../utils"
+import Timer from "../../components/Timer"
+import Form from "../../components/Form"
+import { TIMER } from "../../constants"
 
 export default () => {
     const [defaultValue, setDefaultValue] = useState(60);
@@ -36,23 +36,14 @@ export default () => {
         <>
             <Card className={classes.cardContainer}>
                 <Grid container className={classes.titleGridContainer}>
-                    <Timer message={`${counter} seconds to beep!`} />
-                    <TextField
-                        color="secondary"
-                        className={classes.textField}
-                        placeholder={"Set your time in seconds"}
-                        onChange={e => setDefaultValue(e.target.value)}>
-                    </TextField>
-                    <Grid className={classes.buttonsContainer}>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={() => setStopped(!stopped ? true : false)}>
-                            {!stopped ? "Stop" : "Start"}
-                        </Button>
-                    </Grid>
+                    <Timer 
+                        message={`${counter} seconds to beep!`} />
+                    <Form 
+                        placeholder="Set seconds to beep"
+                        label={!stopped ? "Stop" : "Start"}
+                        handleOnChange={e => setDefaultValue(e.target.value)}
+                        handleOnClick={() => setStopped(!stopped ? true : false)}/>
                 </Grid>
-
             </Card>
         </>
     );
