@@ -7,7 +7,7 @@ export default ({ message }) => {
     const classes = styles();
     return (
         <>
-            <Grid xs={12}>
+            <Grid item xs={12}>
                 <Typography className={classes.buttonsContainer} variant="h5"> {message}</Typography>
             </Grid>
         </>

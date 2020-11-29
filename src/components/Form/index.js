@@ -13,7 +13,7 @@ export default ({ placeholder,label, handleOnChange, handleOnClick }) => {
 
     return (
         <>
-            <Grid xs={12} className={classes.buttonsContainer}>
+            <Grid item xs={12} className={classes.buttonsContainer}>
                 <TextField
                     color="secondary"
                     className={classes.textField}
@@ -21,7 +21,7 @@ export default ({ placeholder,label, handleOnChange, handleOnClick }) => {
                     onChange={handleOnChange}>
                 </TextField>
             </Grid>
-            <Grid xs={12} className={classes.buttonsContainer}>
+            <Grid item xs={12} className={classes.buttonsContainer}>
                 <Button
                     variant="contained"
                     color="primary"
